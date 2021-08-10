@@ -14,5 +14,11 @@ namespace VejrApp
         {
             InitializeComponent();
         }
+        int count = 0;
+        void OnClick(object sender, System.EventArgs e)
+        {
+            count++;
+            ((Button)sender).Text = $"You clicked {count} times.";
+        }
     }
 }
