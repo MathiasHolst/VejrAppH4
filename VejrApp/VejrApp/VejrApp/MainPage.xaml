@@ -8,13 +8,13 @@
             <Label Text="Weather" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
 
-        <Entry Placeholder="New York" PlaceholderColor="DarkGray"/>
+        <Entry Placeholder="Search" PlaceholderColor="DarkGray"/>
         <Button Text="Search" Margin="0,0,0,50"></Button>
         <Button Text="My location" Clicked="OnClick"></Button>
-        <Button Text="Berlin"></Button>
-        <Button Text="Madrid"></Button>
-        <Button Text="London"></Button>
-        <Button Text="Rome"></Button>
+        <Button Text="Berlin" Clicked="Change_page"></Button>
+        <Button Text="Madrid" Clicked="Change_page"></Button>
+        <Button Text="London" Clicked="Change_page"></Button>
+        <Button Text="Rome" Clicked="Change_page"></Button>
         
     </StackLayout>
 

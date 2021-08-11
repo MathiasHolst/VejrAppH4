@@ -20,5 +20,9 @@ namespace VejrApp
             count++;
             ((Button)sender).Text = $"You clicked {count} times.";
         }
+        void Change_page(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new Page1();
+        }
     }
 }
