@@ -3,14 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VejrApp.Page1">
     <ContentPage.Content>
+        
         <StackLayout BackgroundColor="SkyBlue">
             <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
                 <Label Text="Weather" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            <Label Text="Degrees: 22°" HorizontalTextAlignment="Start" Margin="70,30,0,0" FontSize="24"/>
-            <Label Text="Humidity: 5%" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="24"/>
-            <Label Text="Rain: 0mm" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="24"/>
-            <Button Text="Back" Clicked="Front_page"></Button>
+            <StackLayout x:Name="daysLayout" Margin="15">
+                <Label Text="DATE" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Label Text="Degrees: 22°" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Humidity: 5%" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Rain: 0mm" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+            </StackLayout>
+            <StackLayout x:Name="daysLayout2" Margin="15">
+                <Label Text="DATE" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Label Text="Degrees: 22°" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Humidity: 5%" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Rain: 0mm" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+            </StackLayout>
+            <StackLayout x:Name="daysLayout3" Margin="15">
+                <Label Text="DATE" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Label Text="Degrees: 22°" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Humidity: 5%" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label Text="Rain: 0mm" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+            </StackLayout>
+            <Button Text="Back" Clicked="Front_page" VerticalOptions="EndAndExpand"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
