@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace VejrApp
 {
@@ -14,11 +15,11 @@ namespace VejrApp
         {
             InitializeComponent();
         }
-        int count = 0;
-        void OnClick(object sender, System.EventArgs e)
+        async void OnClick(object sender, System.EventArgs e)
         {
-            count++;
-            ((Button)sender).Text = $"You clicked {count} times.";
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            ((Button)sender).Text = $"Latitude: {location.Latitude} Longitude: {location.Longitude}";
+
         }
         void Change_page(object sender, EventArgs e)
         {
