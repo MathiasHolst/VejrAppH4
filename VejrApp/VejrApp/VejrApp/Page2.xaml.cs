@@ -20,12 +20,19 @@ namespace VejrApp
         public Page2(string city)
         {
             InitializeComponent();
-            var json = new WebClient().DownloadString($"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
-            var rootJson = JsonConvert.DeserializeObject<Root>(json);
-            degrees.Text = $"Degrees: " + rootJson.main.temp.ToString();
-            humidity.Text = $"Humidity: " + rootJson.main.humidity.ToString();
-            desc.Text = $"Description: " + rootJson.weather[0].description;
-            Header.Text = rootJson.name;
+            try
+            {
+                var json = new WebClient().DownloadString($"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
+                var rootJson = JsonConvert.DeserializeObject<Root>(json);
+                degrees.Text = $"Degrees: " + rootJson.main.temp.ToString();
+                humidity.Text = $"Humidity: " + rootJson.main.humidity.ToString();
+                desc.Text = $"Description: " + rootJson.weather[0].description;
+                Header.Text = rootJson.name;
+            }
+            catch (Exception)
+            {
+                Header.Text = "Write something in search bar";
+            }
 
 
         }
