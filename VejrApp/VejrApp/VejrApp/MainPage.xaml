@@ -10,9 +10,9 @@
 
         <StackLayout x:Name="OriButton" Orientation="Vertical">
             <Entry x:Name="cityName" Placeholder="Search" PlaceholderColor="DarkGray"/>
-            <Button Text="Search" Clicked="searchCity" Margin="0,0,0,50"></Button>
+            <Button Text="Search" Clicked="SearchCity" Margin="0,0,0,50"></Button>
             <Button Text="My location" Clicked="Change_page"></Button>
-            <Button x:Name="test" Text="Get_orientation" Clicked="Get_Ori"></Button>
+            <Button x:Name="test" Text="Get_orientation" Clicked="Get_Orientation"></Button>
         </StackLayout>
     </StackLayout>
 

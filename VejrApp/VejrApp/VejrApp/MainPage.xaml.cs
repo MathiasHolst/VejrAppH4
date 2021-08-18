@@ -30,13 +30,13 @@ namespace VejrApp
             }
 
         }
-        void searchCity(object sender, EventArgs e)
+        void SearchCity(object sender, EventArgs e)
         {
             string city = cityName.Text;
             App.Current.MainPage = new Page2(city);
 
         }
-        void Get_Ori(object sender, EventArgs e)
+        void Get_Orientation(object sender, EventArgs e)
         {
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
             var orientation = mainDisplayInfo.Orientation;
@@ -54,12 +54,6 @@ namespace VejrApp
         void Change_page(object sender, EventArgs e)
         {
             App.Current.MainPage = new Page1();
-        }
-
-        void ApiCall(object sender, EventArgs e)
-        {
-            var json = new WebClient().DownloadString("https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
-            var rootJson = JsonConvert.DeserializeObject<Root>(json);
         }
     }
 
