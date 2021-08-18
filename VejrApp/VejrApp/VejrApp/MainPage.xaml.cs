@@ -28,6 +28,13 @@ namespace VejrApp
             {
                 test.Text = "Portrait";
             }
+
+        }
+        void searchCity(object sender, EventArgs e)
+        {
+            string city = cityName.ToString();
+            App.Current.MainPage = new Page1(city);
+
         }
         void Get_Ori(object sender, EventArgs e)
         {
@@ -46,7 +53,7 @@ namespace VejrApp
         }
         void Change_page(object sender, EventArgs e)
         {
-            App.Current.MainPage = new Page1();
+            App.Current.MainPage = new Page1("");
         }
 
         void ApiCall(object sender, EventArgs e)
@@ -55,6 +62,7 @@ namespace VejrApp
             var rootJson = JsonConvert.DeserializeObject<Root>(json);
         }
     }
+
     public class Coord
     {
         public double lon { get; set; }

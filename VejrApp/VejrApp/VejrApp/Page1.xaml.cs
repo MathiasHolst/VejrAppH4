@@ -17,7 +17,7 @@ namespace VejrApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
-        public Page1()
+        public Page1(string city)
         {
             InitializeComponent();
             var location = Geolocation.GetLastKnownLocationAsync();
@@ -26,7 +26,8 @@ namespace VejrApp
             degrees.Text = $"Degrees: " + rootJson.main.temp.ToString();
             humidity.Text = $"Humidity: " + rootJson.main.humidity.ToString();
             desc.Text = $"Description: " + rootJson.weather[0].description;
-            Header.Text = rootJson.name;
+            //Header.Text = rootJson.name;
+            Header.Text = city;
         }
         void Front_page(object sender, EventArgs e)
         {
