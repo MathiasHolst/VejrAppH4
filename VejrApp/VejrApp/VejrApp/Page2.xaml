@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VejrApp.Page2">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="SkyBlue">
+            <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
+                <Label x:Name="Header" Text="Weather" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout x:Name="daysLayout" Margin="15">
+                <Label x:Name="date" Text="" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Label x:Name="degrees" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label x:Name="humidity" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+                <Label x:Name="desc" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
+            </StackLayout>
+            <Button Text="Back" Clicked="Front_page" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -32,8 +32,8 @@ namespace VejrApp
         }
         void searchCity(object sender, EventArgs e)
         {
-            string city = cityName.ToString();
-            App.Current.MainPage = new Page1(city);
+            string city = cityName.Text;
+            App.Current.MainPage = new Page2(city);
 
         }
         void Get_Ori(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace VejrApp
         }
         void Change_page(object sender, EventArgs e)
         {
-            App.Current.MainPage = new Page1("");
+            App.Current.MainPage = new Page1();
         }
 
         void ApiCall(object sender, EventArgs e)
