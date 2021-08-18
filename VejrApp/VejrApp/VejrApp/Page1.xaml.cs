@@ -21,14 +21,12 @@ namespace VejrApp
         {
             InitializeComponent();
             var location = Geolocation.GetLastKnownLocationAsync();
-            //var json = new WebClient().DownloadString("https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
             var json = new WebClient().DownloadString($"https://api.openweathermap.org/data/2.5/weather?lat={location.Result.Latitude}&lon={location.Result.Longitude}&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
             var rootJson = JsonConvert.DeserializeObject<Root>(json);
             degrees.Text = $"Degrees: " + rootJson.main.temp.ToString();
             humidity.Text = $"Humidity: " + rootJson.main.humidity.ToString();
             desc.Text = $"Description: " + rootJson.weather[0].description;
             Header.Text = rootJson.name;
-
         }
         void Front_page(object sender, EventArgs e)
         {

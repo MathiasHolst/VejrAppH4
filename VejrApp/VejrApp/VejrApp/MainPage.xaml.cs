@@ -18,6 +18,31 @@ namespace VejrApp
         public MainPage()
         {
             InitializeComponent();
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+            var orientation = mainDisplayInfo.Orientation;
+            if (orientation == DisplayOrientation.Landscape)
+            {
+                test.Text = "Landscape";
+            }
+            else
+            {
+                test.Text = "Portrait";
+            }
+        }
+        void Get_Ori(object sender, EventArgs e)
+        {
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+            var orientation = mainDisplayInfo.Orientation;
+            if (orientation == DisplayOrientation.Landscape)
+            {
+                OriButton.BackgroundColor = Color.Aquamarine;
+                test.Text = "Landscape";
+            }
+            else
+            {
+                OriButton.BackgroundColor = Color.Default;
+                test.Text = "Portrait";
+            }
         }
         void Change_page(object sender, EventArgs e)
         {

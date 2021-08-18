@@ -3,19 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VejrApp.MainPage">
 
-    <StackLayout BackgroundColor="SkyBlue">
+    <StackLayout BackgroundColor="SkyBlue" Orientation="Vertical" x:Name="outerStack">
         <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
             <Label Text="Weather" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
 
-        <Entry Placeholder="Search" PlaceholderColor="DarkGray"/>
-        <Button Text="Search" Margin="0,0,0,50"></Button>
-        <Button Text="My location" Clicked="Change_page"></Button>
-        <Button x:Name="Berlin" Text="Berlin" Clicked="Change_page"></Button>
-        <Button Text="Madrid" Clicked="Change_page"></Button>
-        <Button Text="London" Clicked="Change_page"></Button>
-        <Button Text="Get_orientation" Clicked="Change_page"></Button>
-        
+        <StackLayout x:Name="OriButton" Orientation="Vertical">
+            <Entry Placeholder="Search" PlaceholderColor="DarkGray"/>
+            <Button Text="Search" Margin="0,0,0,50"></Button>
+            <Button Text="My location" Clicked="Change_page"></Button>
+            <Button x:Name="test" Text="Get_orientation" Clicked="Get_Ori"></Button>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
