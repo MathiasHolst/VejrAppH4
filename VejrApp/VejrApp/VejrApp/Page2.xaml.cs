@@ -31,7 +31,7 @@ namespace VejrApp
             }
             catch (Exception)
             {
-                Header.Text = "Write something in search bar";
+                DisplayAlert("Error", "Write something in the search bar", "OK");
             }
 
 
