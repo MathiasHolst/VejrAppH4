@@ -9,10 +9,10 @@
         </Frame>
 
         <StackLayout x:Name="OriButton" Orientation="Vertical">
-            <Entry x:Name="cityName" Placeholder="Search" PlaceholderColor="DarkGray"/>
-            <Button Text="Search" Clicked="SearchCity" Margin="0,0,0,50"></Button>
-            <Button Text="My location" Clicked="Change_page"></Button>
-            <Button x:Name="test" Text="Get_orientation" Clicked="Get_Orientation"></Button>
+            <Entry x:Name="cityName" Placeholder="Search" HorizontalTextAlignment="Center" PlaceholderColor="Chocolate" Margin="30,180,30,0" VerticalOptions="CenterAndExpand"/>
+            <Button x:Name="searchBtn" Text="Search" Clicked="SearchCity" Margin="30,0,30,140"></Button>
+            <Button x:Name="test" Text="Get_orientation" Clicked="Get_Orientation" Margin="30,0,30,0"></Button>
+            <Button x:Name="locationBtn" Text="My location" Clicked="Change_page" Margin="30,0,30,30"></Button>
         </StackLayout>
     </StackLayout>
 

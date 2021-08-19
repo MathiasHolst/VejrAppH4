@@ -23,6 +23,10 @@ namespace VejrApp
             if (orientation == DisplayOrientation.Landscape)
             {
                 test.Text = "Landscape";
+                cityName.Margin = (Thickness)View.MarginProperty.DefaultValue;
+                searchBtn.Margin = (Thickness)View.MarginProperty.DefaultValue;
+                test.Margin = (Thickness)View.MarginProperty.DefaultValue;
+                locationBtn.Margin = (Thickness)View.MarginProperty.DefaultValue;
             }
             else
             {
@@ -36,14 +40,19 @@ namespace VejrApp
             App.Current.MainPage = new Page2(city);
 
         }
+        void ApiCall(object sender, EventArgs e)
+        {
+            var json = new WebClient().DownloadString("https://api.openweathermap.org/data/2.5/weather?q=viborg&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
+            var rootJson = JsonConvert.DeserializeObject<Root>(json);
+        }
+
         void Get_Orientation(object sender, EventArgs e)
         {
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
             var orientation = mainDisplayInfo.Orientation;
             if (orientation == DisplayOrientation.Landscape)
             {
-                OriButton.BackgroundColor = Color.Aquamarine;
-                test.Text = "Landscape";
+                test.Text = "";
             }
             else
             {
