@@ -29,6 +29,7 @@ namespace VejrApp
                 humidity.Text = $"Humidity: {rootJson.main.humidity}";
                 desc.Text = $"Description: {rootJson.weather[0].description}";
                 Header.Text = rootJson.name;
+                weatherIcon.Source = ImageSource.FromResource($"VejrApp.weatherIcons.{rootJson.weather[0].icon}@4x.png");
             }
             catch (Exception)
             {

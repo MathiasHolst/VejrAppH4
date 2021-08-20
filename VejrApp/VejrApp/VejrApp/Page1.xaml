@@ -10,6 +10,7 @@
             </Frame>
             <StackLayout x:Name="daysLayout" Margin="15">
                 <Label x:Name="date" Text="" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Image x:Name="weatherIcon" WidthRequest="80"/>
                 <Label x:Name="degrees" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
                 <Label x:Name="humidity" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
                 <Label x:Name="desc" Text="" HorizontalTextAlignment="Start" Margin="70,0,0,0" FontSize="20"/>
