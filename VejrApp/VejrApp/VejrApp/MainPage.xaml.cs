@@ -10,6 +10,7 @@ using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace VejrApp
 {
@@ -18,21 +19,54 @@ namespace VejrApp
         public MainPage()
         {
             InitializeComponent();
+            CheckForOrientation();
+        }
+        public void CheckForOrientation(object sender, EventArgs e){
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
             var orientation = mainDisplayInfo.Orientation;
             if (orientation == DisplayOrientation.Landscape)
             {
                 test.Text = "Landscape";
-                cityName.Margin = (Thickness)View.MarginProperty.DefaultValue;
-                searchBtn.Margin = (Thickness)View.MarginProperty.DefaultValue;
-                test.Margin = (Thickness)View.MarginProperty.DefaultValue;
-                locationBtn.Margin = (Thickness)View.MarginProperty.DefaultValue;
+                test.VerticalOptions = LayoutOptions.Start;
+                cityName.VerticalOptions = LayoutOptions.Start;
             }
             else
             {
                 test.Text = "Portrait";
+                try
+                {
+                    cityName.VerticalOptions = LayoutOptions.EndAndExpand;
+                    test.VerticalOptions = LayoutOptions.EndAndExpand;
+                }
+                catch (Exception)
+                {
+                    DisplayAlert("Yo", "You fucked up", "ok");
+                }
             }
-
+        }
+        public void CheckForOrientation()
+        {
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+            var orientation = mainDisplayInfo.Orientation;
+            if (orientation == DisplayOrientation.Landscape)
+            {
+                test.Text = "Landscape";
+                cityName.VerticalOptions = LayoutOptions.Start;
+                test.VerticalOptions = LayoutOptions.Start;
+            }
+            else
+            {
+                test.Text = "Portrait";
+                try
+                {
+                    cityName.VerticalOptions = LayoutOptions.EndAndExpand;
+                    test.VerticalOptions = LayoutOptions.EndAndExpand;
+                }
+                catch (Exception)
+                {
+                    DisplayAlert("Yo", "You fucked up", "ok");
+                }
+            }
         }
         void SearchCity(object sender, EventArgs e)
         {
@@ -44,21 +78,6 @@ namespace VejrApp
         {
             var json = new WebClient().DownloadString("https://api.openweathermap.org/data/2.5/weather?q=viborg&appid=41bfac970ccb62f946ceb789cef8bb08&units=metric");
             var rootJson = JsonConvert.DeserializeObject<Root>(json);
-        }
-
-        void Get_Orientation(object sender, EventArgs e)
-        {
-            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
-            var orientation = mainDisplayInfo.Orientation;
-            if (orientation == DisplayOrientation.Landscape)
-            {
-                test.Text = "";
-            }
-            else
-            {
-                OriButton.BackgroundColor = Color.Default;
-                test.Text = "Portrait";
-            }
         }
         void Change_page(object sender, EventArgs e)
         {
