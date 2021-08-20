@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,6 +9,30 @@
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="weatherIcons\01d%404x.png" />
+    <None Remove="weatherIcons\02d%404x.png" />
+    <None Remove="weatherIcons\03d%404x.png" />
+    <None Remove="weatherIcons\04d%404x.png" />
+    <None Remove="weatherIcons\09d%404x.png" />
+    <None Remove="weatherIcons\10d%404x.png" />
+    <None Remove="weatherIcons\11d%404x.png" />
+    <None Remove="weatherIcons\13d%404x.png" />
+    <None Remove="weatherIcons\50d%404x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="weatherIcons\01d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\02d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\03d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\04d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\09d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\10d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\11d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\13d@4x.png" />
+    <EmbeddedResource Include="weatherIcons\50d@4x.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
